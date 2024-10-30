@@ -1,48 +1,53 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-.prose {
-  max-width: none;
+.content-box {
+  float: right;
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  width: 20rem;
 }
 
-.prose h1 {
-  font-family: 'Linux Libertine', 'Georgia', 'Times', serif;
-  border-bottom: 1px solid #a2a9b1;
-  font-size: 1.8em;
-  margin-bottom: 0.6em;
-  padding-bottom: 0.25em;
+.content-header {
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
-.prose h2 {
-  font-family: 'Linux Libertine', 'Georgia', 'Times', serif;
-  border-bottom: 1px solid #a2a9b1;
-  font-size: 1.5em;
-  margin-top: 1em;
-  margin-bottom: 0.6em;
-  padding-bottom: 0.25em;
+.content-header img {
+  max-width: 300px;
+  max-height: 300px;
+  margin: 0.5rem auto;
 }
 
-.prose p {
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-  line-height: 1.6;
+.content-header .caption {
+  font-style: italic;
+  color: #6c757d;
+  font-size: 0.875rem;
 }
 
-.prose a {
+.content-nav h3 {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.content-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.content-nav li {
+  margin: 0.375rem 0;
+}
+
+.content-nav a {
   color: #0645ad;
   text-decoration: none;
 }
 
-.prose a:hover {
+.content-nav a:hover {
   text-decoration: underline;
-}
-
-.prose ul {
-  margin-top: 0.3em;
-  margin-bottom: 0.3em;
-}
-
-.prose li {
-  margin-bottom: 0.1em;
 }
