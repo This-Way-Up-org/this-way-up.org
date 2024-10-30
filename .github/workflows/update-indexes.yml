@@ -25,7 +25,7 @@ jobs:
 
       - name: Create Update Script
         run: |
-          cat > update-indexes.js << 'EOL'
+          cat > update-indexes.js << 'EOF'
           const fs = require('fs');
           const path = require('path');
           const matter = require('gray-matter');
@@ -198,7 +198,7 @@ An alphabetical index of all categories and their pages.
           const { pages, categories } = getPageData(files);
           generateContents(pages);
           generateCategories(categories);
-          EOL
+          EOF
 
       - name: Install gray-matter
         run: npm install gray-matter
