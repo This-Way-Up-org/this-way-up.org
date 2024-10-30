@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} - {{ site.title }}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+</head>
+<body>
+    <div class="min-h-screen bg-gray-50">
+        {% include header.html %}
+        <div class="flex max-w-7xl mx-auto mt-40 bg-white">
+            {% include sidebar.html %}
+            <main class="flex-1 p-6">
+                {{ content }}
+            </main>
+        </div>
+    </div>
+    <script src="{{ '/assets/js/search.js' | relative_url }}"></script>
+</body>
+</html>

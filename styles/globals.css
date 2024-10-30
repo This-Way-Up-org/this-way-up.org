@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.prose {
+  max-width: none;
+}
+
+.prose h1 {
+  font-family: 'Linux Libertine', 'Georgia', 'Times', serif;
+  border-bottom: 1px solid #a2a9b1;
+  font-size: 1.8em;
+  margin-bottom: 0.6em;
+  padding-bottom: 0.25em;
+}
+
+.prose h2 {
+  font-family: 'Linux Libertine', 'Georgia', 'Times', serif;
+  border-bottom: 1px solid #a2a9b1;
+  font-size: 1.5em;
+  margin-top: 1em;
+  margin-bottom: 0.6em;
+  padding-bottom: 0.25em;
+}
+
+.prose p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  line-height: 1.6;
+}
+
+.prose a {
+  color: #0645ad;
+  text-decoration: none;
+}
+
+.prose a:hover {
+  text-decoration: underline;
+}
+
+.prose ul {
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
+}
+
+.prose li {
+  margin-bottom: 0.1em;
+}

@@ -1,0 +1,3 @@
+# Core dependencies
+# Note: Only standard library is available in WebContainers
+# Additional packages would need WASM builds

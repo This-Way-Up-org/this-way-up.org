@@ -1,0 +1,19 @@
+{
+  "pages": [
+    {
+      "title": "Home",
+      "path": "/",
+      "content": "Welcome to Our Wiki\n\nA modern, static documentation site with fast search and easy navigation."
+    },
+    {
+      "title": "Getting Started",
+      "path": "/getting-started",
+      "content": "Getting Started with Our Wiki\n\nWelcome to our documentation! This page will help you understand how to use and contribute to the wiki."
+    },
+    {
+      "title": "Example Article",
+      "path": "/example-article",
+      "content": "This is an example article showing various Markdown formatting options."
+    }
+  ]
+}

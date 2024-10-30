@@ -1,0 +1,25 @@
+<div class="w-64 bg-gray-50 border-r min-h-screen p-4">
+    <div class="mb-8">
+        <div class="relative">
+            <input
+                type="text"
+                id="search-input"
+                placeholder="Search wiki..."
+                class="w-full p-2 pl-8 pr-8 border rounded bg-white"
+            >
+            <svg class="absolute left-2 top-2.5 h-4 w-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+        </div>
+        <div id="search-results" class="mt-2 bg-white border rounded shadow-sm hidden"></div>
+    </div>
+
+    <div class="mb-8">
+        <h3 class="font-bold text-gray-700 mb-2 pb-1 border-b">Navigation</h3>
+        <ul class="space-y-2">
+            {% for page in site.pages %}
+                <li><a href="{{ page.url | relative_url }}" class="text-blue-600 hover:underline">{{ page.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
