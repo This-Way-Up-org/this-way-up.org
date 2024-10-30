@@ -11,7 +11,7 @@ category: Documentation
 </div>
 
 <div class="content-box">
-  <img src="/public/images/example-image.jpg" alt="Example illustration" width="300" height="300">
+  <img src="/images/example-image.jpg" alt="Example illustration" width="300" height="300">
   <div class="content-nav">
     <h3>Contents</h3>
     <ul>
@@ -76,7 +76,7 @@ You can create links to other articles like [Getting Started](/getting-started) 
 
 Images can be embedded with captions:
 
-![Example diagram](/public/images/example-diagram.png)
+![Example diagram](/images/example-diagram.png)
 *Figure 1: An example diagram showing the documentation structure*
 
 ### References
