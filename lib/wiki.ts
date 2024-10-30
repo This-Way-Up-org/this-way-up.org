@@ -5,12 +5,33 @@ import { marked } from 'marked'
 
 const contentDirectory = path.join(process.cwd(), 'content')
 
-export async function getAllPages() {
+export interface WikiPage {
+  slug: string
+  title: string
+  category: string
+  lastModified: string
+}
+
+export interface PageContent {
+  content: string
+  pages: WikiPage[]
+  title: string
+  category: string
+  lastModified: string
+}
+
+export async function getAllPages(): Promise<WikiPage[]> {
+  const cache = new Map()
+  
   if (!fs.existsSync(contentDirectory)) {
     fs.mkdirSync(contentDirectory, { recursive: true })
   }
 
-  const pages = []
+  if (cache.has('pages')) {
+    return cache.get('pages')
+  }
+
+  const pages: WikiPage[] = []
   
   function traverseDirectory(dir: string, baseSlug = '') {
     const entries = fs.readdirSync(dir)
@@ -22,12 +43,14 @@ export async function getAllPages() {
       if (stat.isDirectory()) {
         traverseDirectory(fullPath, path.join(baseSlug, entry))
       } else if (entry.endsWith('.md')) {
+        const fileContent = fs.readFileSync(fullPath, 'utf8')
+        const { data } = matter(fileContent)
         const slug = path.join(baseSlug, entry.replace(/\.md$/, ''))
-        const { data } = matter(fs.readFileSync(fullPath, 'utf8'))
         pages.push({
           slug,
           title: data.title || slug,
-          category: data.category || 'Uncategorized'
+          category: data.category || 'Uncategorized',
+          lastModified: stat.mtime.toISOString()
         })
       }
     }
@@ -35,27 +58,39 @@ export async function getAllPages() {
 
   traverseDirectory(contentDirectory)
 
-  // Add README.md as Home page
   const readmePath = path.join(process.cwd(), 'README.md')
   if (fs.existsSync(readmePath)) {
+    const stat = fs.statSync(readmePath)
     const { data } = matter(fs.readFileSync(readmePath, 'utf8'))
     pages.unshift({
       slug: '',
       title: data.title || 'Home',
-      category: data.category || 'Main'
+      category: data.category || 'Main',
+      lastModified: stat.mtime.toISOString()
     })
   }
 
+  cache.set('pages', pages)
   return pages
 }
 
-export async function getPageContent(filename: string) {
+export async function getPageContent(filename: string): Promise<PageContent> {
+  const cache = new Map()
+  const cacheKey = `content:${filename}`
+
+  if (cache.has(cacheKey)) {
+    return cache.get(cacheKey)
+  }
+
   const fullPath = path.join(contentDirectory, filename)
   
   if (!fs.existsSync(fullPath)) {
     return {
       content: '<h1>Page not found</h1>',
-      pages: await getAllPages()
+      pages: await getAllPages(),
+      title: 'Page Not Found',
+      category: 'Error',
+      lastModified: new Date().toISOString()
     }
   }
 
@@ -63,9 +98,14 @@ export async function getPageContent(filename: string) {
   const { data, content } = matter(fileContents)
   const pages = await getAllPages()
   
-  return {
+  const result: PageContent = {
     content: marked(content),
     pages,
-    ...data
+    title: data.title || filename,
+    category: data.category || 'Uncategorized',
+    lastModified: fs.statSync(fullPath).mtime.toISOString()
   }
+
+  cache.set(cacheKey, result)
+  return result
 }
