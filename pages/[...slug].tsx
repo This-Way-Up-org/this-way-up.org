@@ -1,5 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
-import { getPageContent, getAllPages, WikiPage, PageContent } from '../lib/wiki'
+import { getPageContent, getAllPages } from '../lib/wiki'
+import type { WikiPage, PageContent } from '../lib/wiki'
 import Layout from '../components/Layout'
 import { getGithubEditUrl } from '../lib/config'
 import { useEffect, useRef } from 'react'
