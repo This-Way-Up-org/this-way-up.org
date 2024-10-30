@@ -1,6 +1,6 @@
 ---
 title: Example Article
-category: Documentation
+category: Guide
 ---
 
 <div class="article-header">
