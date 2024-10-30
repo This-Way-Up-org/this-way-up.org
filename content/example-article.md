@@ -1,54 +1,86 @@
 ---
 title: Example Article
-category: Examples
+category: Documentation
 ---
 
-# Example Article
-
-<div class="content-box">
-  <div class="content-header">
-    <h2>Example Article</h2>
-    <img src="/example-image.jpg" alt="Example illustration" width="300" height="300">
-    <p class="caption">Example illustration</p>
+<div class="article-header">
+  <h1>Example Article</h1>
+  <div class="article-metadata">
+    From our documentation
   </div>
-  <nav class="content-nav">
-    <h3>Contents</h3>
-    <ul>
-      <li><a href="#text-formatting">Text Formatting</a></li>
-      <li><a href="#lists">Lists</a></li>
-      <li><a href="#code">Code</a></li>
-      <li><a href="#links-and-images">Links and Images</a></li>
-    </ul>
-  </nav>
 </div>
 
-This is an example article showing various Markdown formatting options.
+<div class="content-box">
+  <img src="/images/example-300x300.jpg" alt="Example illustration" width="300" height="300">
+  <div class="content-nav">
+    <h3>Contents</h3>
+    <ul>
+      <li><a href="#introduction">Introduction</a></li>
+      <li><a href="#text-formatting">Text Formatting</a></li>
+      <li><a href="#lists">Lists</a></li>
+      <li><a href="#code">Code Examples</a></li>
+      <li><a href="#links-and-images">Links and Images</a></li>
+    </ul>
+  </div>
+</div>
+
+## Introduction {#introduction}
+
+This is an example article demonstrating the various formatting and layout options available in our documentation system. The article showcases text formatting, lists, code blocks, and media embedding capabilities.
 
 ## Text Formatting {#text-formatting}
 
-You can write text in **bold** or *italic*. 
+You can format text in multiple ways:
+
+- Make text **bold** using double asterisks
+- Make text *italic* using single asterisks
+- Create `inline code` using backticks
+- Create ==highlighted text== using double equals
+- Add ~~strikethrough~~ using double tildes
 
 ## Lists {#lists}
 
-Unordered list:
-- Item 1
-- Item 2
-- Item 3
+### Unordered Lists
 
-Ordered list:
-1. First item
-2. Second item
-3. Third item
+- First item
+- Second item
+  - Nested item 1
+  - Nested item 2
+- Third item
 
-## Code {#code}
+### Ordered Lists
+
+1. First step
+2. Second step
+   1. Substep A
+   2. Substep B
+3. Third step
+
+## Code Examples {#code}
+
+Here's an example of a JavaScript code block:
 
 ```javascript
-const greeting = "Hello, World!";
-console.log(greeting);
+function greet(name) {
+  console.log(`Hello, ${name}!`);
+  return true;
+}
+
+// Call the function
+greet('World');
 ```
 
 ## Links and Images {#links-and-images}
 
-[Link to Getting Started](/getting-started)
+You can create links to other articles like [Getting Started](/getting-started) or external sites.
 
-![Alt text for image](/example-image.jpg)
+Images can be embedded with captions:
+
+![Example diagram](/images/example-diagram.png)
+*Figure 1: An example diagram showing the documentation structure*
+
+### References
+
+- Documentation Style Guide
+- Markdown Syntax Reference
+- Image Guidelines
