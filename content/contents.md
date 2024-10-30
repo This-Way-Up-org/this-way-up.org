@@ -9,9 +9,6 @@ An alphabetical index of all pages on this wiki.
 
 ## A
 
-- [Another Page](/another-page)
-- [Article](/article)
-
 ## C
 
 - [Contents](/contents) (this page)
