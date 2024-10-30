@@ -11,7 +11,7 @@ category: Documentation
 </div>
 
 <div class="content-box">
-  <img src="/images/example-300x300.jpg" alt="Example illustration" width="300" height="300">
+  <img src="/images/example-image.jpg" alt="Example illustration" width="300" height="300">
   <div class="content-nav">
     <h3>Contents</h3>
     <ul>
