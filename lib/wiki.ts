@@ -50,18 +50,6 @@ export async function getAllPages() {
 }
 
 export async function getPageContent(filename: string) {
-  if (filename === 'index.md') {
-    const readmePath = path.join(process.cwd(), 'README.md')
-    const fileContents = fs.readFileSync(readmePath, 'utf8')
-    const { content } = matter(fileContents)
-    const pages = await getAllPages()
-    
-    return {
-      content: marked(content),
-      pages
-    }
-  }
-
   const fullPath = path.join(contentDirectory, filename)
   
   if (!fs.existsSync(fullPath)) {
