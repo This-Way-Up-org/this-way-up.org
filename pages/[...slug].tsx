@@ -12,9 +12,11 @@ export default function WikiPage({ content, pages }) {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const pages = await getAllPages()
-  const paths = pages.map(page => ({
-    params: { slug: page.slug.split('/') }
-  }))
+  const paths = pages
+    .filter(page => page.slug !== '') // Exclude the root path
+    .map(page => ({
+      params: { slug: page.slug.split('/') }
+    }))
 
   return {
     paths,
