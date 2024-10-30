@@ -2,7 +2,7 @@
   "pages": [
     {
       "title": "Home",
-      "path": "/",
+      "path": "/README.md",
       "content": "Welcome to Our Wiki\n\nA modern, static documentation site with fast search and easy navigation."
     },
     {
