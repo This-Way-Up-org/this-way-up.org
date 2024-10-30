@@ -190,7 +190,7 @@ An alphabetical index of all categories and their pages.
             content += `New categories can be added by including them in the front matter of any page:\n\n`;
             content += "```yaml\n---\ntitle: Page Title\ncategory: New Category\n---\n```";
 
-            fs.writeFileSync('content/categories.md', content);
+            fs.writeFileSync('content/Categories/categories.md', content);
           }
 
           // Main execution
