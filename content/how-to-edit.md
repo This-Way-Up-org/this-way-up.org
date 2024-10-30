@@ -8,7 +8,7 @@ title: How to Edit
 ## File Structure
 
 ```
-_pages/           # All wiki content goes here
+content/           # All wiki content goes here
 ├── getting-started.md
 ├── example-article.md
 └── your-new-article.md
@@ -16,9 +16,9 @@ _pages/           # All wiki content goes here
 
 ## Creating New Articles
 
-1. Create a new `.md` file in `_pages/`
+1. Create a new `.md` file in `content/`
 2. Add front matter:
-   ```yaml
+   ```
    ---
    layout: page
    title: Your Article Title
