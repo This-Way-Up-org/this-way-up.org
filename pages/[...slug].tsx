@@ -1,18 +1,13 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
-import { getPageContent, getAllPages } from '../lib/wiki'
+import { getPageContent, getAllPages, WikiPage, PageContent } from '../lib/wiki'
 import Layout from '../components/Layout'
 import { getGithubEditUrl } from '../lib/config'
 import { useEffect, useRef } from 'react'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 
-interface WikiPageProps {
-  content: string
-  pages: any[]
+interface WikiPageProps extends PageContent {
   githubUrl: string
-  title: string
-  category: string
-  lastModified: string
 }
 
 export default function WikiPage({ content, pages, githubUrl, title, category, lastModified }: WikiPageProps) {
@@ -85,19 +80,15 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps<WikiPageProps> = async ({ params }) => {
   const slug = (params?.slug as string[]).join('/')
-  const { content, pages, title, category, lastModified } = await getPageContent(`${slug}.md`)
+  const pageContent = await getPageContent(`${slug}.md`)
   const githubUrl = getGithubEditUrl(`${slug}.md`)
 
   return {
     props: {
-      content,
-      pages,
-      githubUrl,
-      title,
-      category,
-      lastModified
+      ...pageContent,
+      githubUrl
     }
   }
 }
