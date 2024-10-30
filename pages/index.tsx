@@ -1,6 +1,10 @@
 import { GetStaticProps } from 'next'
 import Layout from '../components/Layout'
-import { getAllPages, getPageContent } from '../lib/wiki'
+import { getAllPages } from '../lib/wiki'
+import fs from 'fs'
+import path from 'path'
+import matter from 'gray-matter'
+import { marked } from 'marked'
 
 export default function Home({ content, pages }) {
   return (
@@ -12,11 +16,14 @@ export default function Home({ content, pages }) {
 
 export const getStaticProps: GetStaticProps = async () => {
   const pages = await getAllPages()
-  const { content } = await getPageContent('index.md')
+  const readmePath = path.join(process.cwd(), 'README.md')
+  const fileContents = fs.readFileSync(readmePath, 'utf8')
+  const { content } = matter(fileContents)
+  const htmlContent = marked(content)
 
   return {
     props: {
-      content,
+      content: htmlContent,
       pages
     }
   }
