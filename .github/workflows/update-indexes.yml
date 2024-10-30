@@ -1,0 +1,221 @@
+name: Update Content Indexes
+
+on:
+  push:
+    paths:
+      - 'content/**.md'
+    branches:
+      - main
+
+jobs:
+  update-indexes:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Create Update Script
+        run: |
+          cat > update-indexes.js << 'EOL'
+          const fs = require('fs');
+          const path = require('path');
+          const matter = require('gray-matter');
+
+          // Get all markdown files
+          function getAllMarkdownFiles(dir) {
+            let results = [];
+            const files = fs.readdirSync(dir);
+            
+            for (const file of files) {
+              const filePath = path.join(dir, file);
+              const stat = fs.statSync(filePath);
+              
+              if (stat.isDirectory()) {
+                results = results.concat(getAllMarkdownFiles(filePath));
+              } else if (file.endsWith('.md')) {
+                results.push(filePath);
+              }
+            }
+            
+            return results;
+          }
+
+          // Parse front matter and create page data
+          function getPageData(files) {
+            const pages = [];
+            const categories = new Map();
+
+            files.forEach(file => {
+              const content = fs.readFileSync(file, 'utf8');
+              const { data } = matter(content);
+              const relativePath = file.replace('content/', '');
+              const urlPath = '/' + relativePath.replace('.md', '');
+              
+              // Skip contents.md and categories.md
+              if (relativePath === 'contents.md' || relativePath === 'categories.md') {
+                return;
+              }
+
+              const pageData = {
+                title: data.title || path.basename(file, '.md'),
+                url: urlPath,
+                category: data.category || 'Uncategorized'
+              };
+
+              pages.push(pageData);
+
+              // Group by category
+              if (!categories.has(pageData.category)) {
+                categories.set(pageData.category, []);
+              }
+              categories.get(pageData.category).push(pageData);
+            });
+
+            return { pages, categories };
+          }
+
+          // Generate contents.md
+          function generateContents(pages) {
+            // Sort pages alphabetically by title
+            pages.sort((a, b) => a.title.localeCompare(b.title));
+
+            // Group by first letter
+            const byLetter = new Map();
+            pages.forEach(page => {
+              const letter = page.title[0].toUpperCase();
+              if (!byLetter.has(letter)) {
+                byLetter.set(letter, []);
+              }
+              byLetter.get(letter).push(page);
+            });
+
+            // Generate markdown
+            let content = `---
+title: Contents
+category: Navigation
+---
+
+# Contents
+
+An alphabetical index of all pages on this wiki.
+
+`;
+
+            // Add alphabetical listing
+            for (const [letter, pages] of [...byLetter.entries()].sort()) {
+              content += `\n## ${letter}\n\n`;
+              pages.forEach(page => {
+                content += `- [${page.title}](${page.url})\n`;
+              });
+            }
+
+            // Add special pages section
+            content += `\n---\n\n## Special Pages\n\n`;
+            content += `- [Categories](/categories)\n`;
+            content += `- [Main Page](/)\n`;
+
+            // Add category listing
+            content += `\n## By Category\n\n`;
+            const categoryGroups = new Map();
+            pages.forEach(page => {
+              if (!categoryGroups.has(page.category)) {
+                categoryGroups.set(page.category, []);
+              }
+              categoryGroups.get(page.category).push(page);
+            });
+
+            for (const [category, categoryPages] of [...categoryGroups.entries()].sort()) {
+              content += `### ${category}\n`;
+              categoryPages.forEach(page => {
+                content += `- [${page.title}](${page.url})\n`;
+              });
+              content += '\n';
+            }
+
+            fs.writeFileSync('content/contents.md', content);
+          }
+
+          // Generate categories.md
+          function generateCategories(categories) {
+            let content = `---
+title: Categories
+category: Navigation
+---
+
+# Categories
+
+An alphabetical index of all categories and their pages.
+
+`;
+
+            // Sort categories alphabetically
+            const sortedCategories = [...categories.entries()].sort();
+
+            // Add each category and its pages
+            sortedCategories.forEach(([category, pages]) => {
+              content += `\n## ${category}\n\n`;
+              
+              // Add category description if it exists
+              if (category === 'Guide') {
+                content += 'Articles that provide step-by-step instructions and detailed explanations.\n\n';
+              } else if (category === 'Navigation') {
+                content += 'Pages that help you find content across the wiki.\n\n';
+              } else if (category === 'Main') {
+                content += 'Core documentation pages.\n\n';
+              }
+
+              // Add pages
+              pages.sort((a, b) => a.title.localeCompare(b.title));
+              pages.forEach(page => {
+                content += `- [${page.title}](${page.url})\n`;
+              });
+            });
+
+            // Add statistics
+            content += `\n---\n\n## Statistics\n\n`;
+            content += `- Total categories: ${categories.size}\n`;
+            content += `- Total pages: ${[...categories.values()].flat().length}\n`;
+
+            // Add instructions for adding categories
+            content += `\n## Adding Categories\n\n`;
+            content += `New categories can be added by including them in the front matter of any page:\n\n`;
+            content += "```yaml\n---\ntitle: Page Title\ncategory: New Category\n---\n```";
+
+            fs.writeFileSync('content/categories.md', content);
+          }
+
+          // Main execution
+          const files = getAllMarkdownFiles('content');
+          const { pages, categories } = getPageData(files);
+          generateContents(pages);
+          generateCategories(categories);
+          EOL
+
+      - name: Install gray-matter
+        run: npm install gray-matter
+
+      - name: Run Update Script
+        run: node update-indexes.js
+
+      - name: Check for Changes
+        id: check-changes
+        run: |
+          git diff --quiet content/contents.md content/categories.md || echo "changes=true" >> $GITHUB_OUTPUT
+
+      - name: Commit Changes
+        if: steps.check-changes.outputs.changes == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add content/contents.md content/categories.md
+          git commit -m "docs: update content indexes [skip ci]"
+          git push
