@@ -10,7 +10,7 @@ A static website alternative to Mediawiki with fast search and easy navigation.
 ## Quick Links
 
 - 📚 [Getting Started](/getting-started)
-- 🎓 [Tutorials](/tutorials)
+- 🎓 [Tutorials](/Tutorials/tutorials)
 - 📖 [Example Article](/example-article)
 
 ## Features
