@@ -1,26 +1,43 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Search, X } from 'lucide-react'
-
-interface Page {
-  slug: string
-  title: string
-  category: string
-}
+import { WikiPage } from '../lib/wiki'
 
 interface SidebarProps {
-  pages: Page[]
+  pages: WikiPage[]
+}
+
+interface CategoryGroup {
+  [key: string]: WikiPage[]
 }
 
 export default function Sidebar({ pages }: SidebarProps) {
   const [searchQuery, setSearchQuery] = useState('')
   const [isSearching, setIsSearching] = useState(false)
 
+  // Group pages by category
+  const categoryGroups = pages.reduce((groups: CategoryGroup, page) => {
+    const category = page.category || 'Uncategorized'
+    if (!groups[category]) {
+      groups[category] = []
+    }
+    groups[category].push(page)
+    return groups
+  }, {})
+
+  // Sort pages within each category
+  Object.keys(categoryGroups).forEach(category => {
+    categoryGroups[category].sort((a, b) => a.title.localeCompare(b.title))
+  })
+
   const filteredPages = searchQuery
     ? pages.filter(page => 
         page.title.toLowerCase().includes(searchQuery.toLowerCase())
       )
     : []
+
+  // Define category order
+  const categoryOrder = ['Main', 'Navigation', 'Guide']
 
   return (
     <div className="w-[176px] bg-[#f6f6f6] p-4 shrink-0">
@@ -76,30 +93,26 @@ export default function Sidebar({ pages }: SidebarProps) {
       </div>
 
       <nav className="text-sm">
-        <div className="mb-4">
-          <h3 className="font-bold text-[#54595d] mb-1">Navigation</h3>
-          <ul className="space-y-1">
-            <li><Link href="/" className="text-[#0645ad] hover:underline">Main page</Link></li>
-            <li><Link href="/contents" className="text-[#0645ad] hover:underline">Contents</Link></li>
-            <li><Link href="/categories" className="text-[#0645ad] hover:underline">Categories</Link></li>
-          </ul>
-        </div>
-
-        <div className="mb-4">
-          <h3 className="font-bold text-[#54595d] mb-1">Pages</h3>
-          <ul className="space-y-1">
-            {pages.map((page, index) => (
-              <li key={index}>
-                <Link 
-                  href={`/${page.slug}`}
-                  className="text-[#0645ad] hover:underline"
-                >
-                  {page.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+        {categoryOrder.map(category => {
+          if (!categoryGroups[category]) return null;
+          return (
+            <div key={category} className="mb-4">
+              <h3 className="font-bold text-[#54595d] mb-1">{category}</h3>
+              <ul className="space-y-1">
+                {categoryGroups[category].map((page, index) => (
+                  <li key={index}>
+                    <Link 
+                      href={`/${page.slug}`}
+                      className="text-[#0645ad] hover:underline"
+                    >
+                      {page.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          );
+        })}
       </nav>
     </div>
   )
