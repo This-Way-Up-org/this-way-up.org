@@ -49,14 +49,11 @@
 }
 
 /* Article layout */
-.article-header {
-  margin-bottom: 2rem;
-}
-
-.article-metadata {
-  color: #54595d;
-  font-size: 0.875rem;
-  margin-top: 0.25rem;
+.wiki-article {
+  position: relative;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
 /* Content box */
@@ -103,31 +100,4 @@
 
 .content-nav a:hover {
   text-decoration: underline;
-}
-
-/* Code blocks */
-pre {
-  background: #f6f8fa;
-  border: 1px solid #ddd;
-  border-radius: 0.25rem;
-  padding: 1rem;
-  overflow-x: auto;
-}
-
-code {
-  font-family: Consolas, Monaco, 'Andale Mono', monospace;
-  font-size: 0.9em;
-}
-
-/* Images */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-figcaption {
-  color: #54595d;
-  font-size: 0.875rem;
-  text-align: center;
-  margin-top: 0.5rem;
 }
