@@ -33,23 +33,35 @@ export async function getAllPages() {
     }
   }
 
-  if (fs.readdirSync(contentDirectory).length === 0) {
-    // Create default index.md if content directory is empty
-    const defaultContent = `---
-title: Welcome to Our Wiki
----
+  traverseDirectory(contentDirectory)
 
-# Welcome to Our Wiki
-
-A modern, static documentation site with fast search and easy navigation.`
-    fs.writeFileSync(path.join(contentDirectory, 'index.md'), defaultContent)
+  // Add README.md as Home page
+  const readmePath = path.join(process.cwd(), 'README.md')
+  if (fs.existsSync(readmePath)) {
+    const { data } = matter(fs.readFileSync(readmePath, 'utf8'))
+    pages.unshift({
+      slug: '',
+      title: data.title || 'Home',
+      category: data.category || 'Main'
+    })
   }
 
-  traverseDirectory(contentDirectory)
   return pages
 }
 
 export async function getPageContent(filename: string) {
+  if (filename === 'index.md') {
+    const readmePath = path.join(process.cwd(), 'README.md')
+    const fileContents = fs.readFileSync(readmePath, 'utf8')
+    const { content } = matter(fileContents)
+    const pages = await getAllPages()
+    
+    return {
+      content: marked(content),
+      pages
+    }
+  }
+
   const fullPath = path.join(contentDirectory, filename)
   
   if (!fs.existsSync(fullPath)) {
