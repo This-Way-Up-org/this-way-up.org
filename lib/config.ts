@@ -1,6 +1,6 @@
 export const GITHUB_REPO = {
-  owner: 'username',
-  name: 'wiki',
+  owner: 'Offren',
+  name: 'gitWiki',
   branch: 'main',
   contentPath: 'content'
 }
