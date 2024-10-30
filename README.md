@@ -3,9 +3,9 @@ layout: home
 title: Home
 ---
 
-# Welcome to Our Wiki
+# Welcome to gitWiki
 
-A modern, static documentation site with fast search and easy navigation.
+A static website alternative to Mediawiki with fast search and easy navigation.
 
 ## Quick Links
 
@@ -15,11 +15,11 @@ A modern, static documentation site with fast search and easy navigation.
 
 ## Features
 
-- Fast, static site generation
+- Static website for easy hosting
 - Full-text search functionality
 - Markdown-based content
-- Clean, responsive design
-- Easy navigation
+- Visitor friendly Wiki-like design
+- Your README file is also your homepage
 
 ## Recent Updates
 
