@@ -6,9 +6,10 @@ interface LayoutProps {
   children: ReactNode
   pages: any[]
   githubUrl?: string
+  currentPath?: string
 }
 
-export default function Layout({ children, pages, githubUrl }: LayoutProps) {
+export default function Layout({ children, pages, githubUrl, currentPath }: LayoutProps) {
   return (
     <div className="min-h-screen bg-[#f6f6f6]">
       <header className="h-[144px] bg-[#ffffff] border-b border-[#a7d7f9]">
@@ -27,7 +28,7 @@ export default function Layout({ children, pages, githubUrl }: LayoutProps) {
       <div className="max-w-7xl mx-auto bg-white flex">
         <Sidebar pages={pages} />
         <div className="flex-1 border-l border-[#a7d7f9]">
-          <TopNav githubUrl={githubUrl} />
+          <TopNav githubUrl={githubUrl} currentPath={currentPath} />
           <main className="p-6">
             {children}
           </main>
