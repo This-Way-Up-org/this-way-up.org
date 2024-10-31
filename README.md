@@ -11,7 +11,7 @@ A static website alternative to Mediawiki with fast search and easy navigation.
 
 - 📚 [Getting Started](/getting-started)
 - 🎓 [Tutorials](/Tutorials/tutorials)
-- 📖 [Example Article](/content/example-article)
+- 📖 [Example Article](/example-article)
 
 ## Features
 
