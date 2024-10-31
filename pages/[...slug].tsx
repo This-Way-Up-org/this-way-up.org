@@ -9,9 +9,10 @@ import Head from 'next/head'
 
 interface WikiPageProps extends PageContent {
   githubUrl: string
+  currentPath: string
 }
 
-export default function WikiPage({ content, pages, githubUrl, title, category, lastModified }: WikiPageProps) {
+export default function WikiPage({ content, pages, githubUrl, title, category, lastModified, currentPath }: WikiPageProps) {
   const router = useRouter()
   const contentRef = useRef<HTMLDivElement>(null)
 
@@ -41,7 +42,7 @@ export default function WikiPage({ content, pages, githubUrl, title, category, l
 
   if (router.isFallback) {
     return (
-      <Layout pages={[]} githubUrl="">
+      <Layout pages={[]} githubUrl="" currentPath="">
         <div className="flex items-center justify-center h-64">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500" />
         </div>
@@ -50,7 +51,7 @@ export default function WikiPage({ content, pages, githubUrl, title, category, l
   }
 
   return (
-    <Layout pages={pages} githubUrl={githubUrl}>
+    <Layout pages={pages} githubUrl={githubUrl} currentPath={currentPath}>
       <Head>
         <title>{title} - Wiki</title>
         <meta name="description" content={`${title} - ${category}`} />
@@ -85,11 +86,13 @@ export const getStaticProps: GetStaticProps<WikiPageProps> = async ({ params }) 
   const slug = (params?.slug as string[]).join('/')
   const pageContent = await getPageContent(`${slug}.md`)
   const githubUrl = getGithubEditUrl(`${slug}.md`)
+  const currentPath = `${slug}.md`
 
   return {
     props: {
       ...pageContent,
-      githubUrl
+      githubUrl,
+      currentPath
     }
   }
 }
