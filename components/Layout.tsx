@@ -22,7 +22,7 @@ export default function Layout({ children, pages, githubUrl, currentPath }: Layo
                 gitWiki
               </Link>
               <span className="text-[#54595d] text-lg">
-                The Developer's Documentation Platform
+                Stop paying to host your wiki
               </span>
             </div>
           </div>
