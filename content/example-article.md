@@ -35,7 +35,6 @@ You can format text in multiple ways:
 - Make text **bold** using double asterisks
 - Make text *italic* using single asterisks
 - Create `inline code` using backticks
-- Create ==highlighted text== using double equals
 - Add ~~strikethrough~~ using double tildes
 
 <h2 id="lists">Lists</h2>
