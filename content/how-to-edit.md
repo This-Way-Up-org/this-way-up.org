@@ -18,13 +18,14 @@ content/           # All wiki content goes here
 
 1. Create a new `.md` file in `content/`
 2. Add front matter:
+
    ```
    ---
    layout: page
    title: Your Article Title
    ---
    ```
-3. Write content using Markdown
+4. Write content using Markdown
 
 ## Editing Existing Articles
 
