@@ -6,7 +6,8 @@ category: Guide
 <div class="article-header">
   <h1 id="top">Example Article</h1>
   <div class="article-metadata">
-    Click edit in the top right see all formatting tips and how to use images, hyperlinks, the content box, etc.
+    Click edit in the top right see all formatting tips and how to use images, hyperlinks,
+    the content box, etc.
   </div>
 </div>
 
