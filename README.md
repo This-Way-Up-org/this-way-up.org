@@ -29,4 +29,4 @@ A static website alternative to Mediawiki with fast search and easy navigation.
 
 ## Contributing
 
-Want to improve the documentation? Check out our [How to Edit](/how-to-edit.md) guide to get started.
+Want to improve the documentation? Check out our [How to Edit](/how-to-edit) guide to get started.
