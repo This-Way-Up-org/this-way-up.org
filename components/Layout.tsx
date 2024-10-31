@@ -16,6 +16,13 @@ export default function Layout({ children, pages, githubUrl, currentPath }: Layo
     <div className="min-h-screen bg-[#f6f6f6]">
       <header className="h-[144px] bg-[#ffffff] border-b border-[#a7d7f9]">
         <div className="max-w-7xl mx-auto px-4 h-full flex items-center">
+          <img 
+                src="/logo.png" 
+                alt="Wiki Logo" 
+                className="w-[144px] h-[144px] object-contain"
+                width={450}
+                height={450}
+              />
           <div className="flex items-center gap-6">
             <Link href="/" className="text-2xl font-bold text-[#0070f3]">
               gitWiki
