@@ -1,6 +1,6 @@
 ---
-layout: page
 title: How to Edit
+category: Guide
 ---
 
 # How to Edit This Wiki
