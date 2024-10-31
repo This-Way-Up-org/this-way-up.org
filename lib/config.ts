@@ -6,6 +6,6 @@ export const GITHUB_REPO = {
   }
   
   export const getGithubEditUrl = (path: string): string => {
-    return `https://github.com/${GITHUB_REPO.owner}/${GITHUB_REPO.name}/tree/${GITHUB_REPO.branch}/${GITHUB_REPO.contentPath}/${path}`
+    return `https://github.com/${GITHUB_REPO.owner}/${GITHUB_REPO.name}/edit/${GITHUB_REPO.branch}/${GITHUB_REPO.contentPath}/${path}`
   }
   
