@@ -1,6 +1,6 @@
 ---
-layout: home
 title: Home
+category: Main
 ---
 
 # Welcome to gitWiki
