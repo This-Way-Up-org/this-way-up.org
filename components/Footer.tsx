@@ -18,13 +18,13 @@ export default function Footer() {
             additional terms may apply.
           </p>
           <div className="mt-2 flex gap-4">
-            <Link href="/content/terms">
+            <Link href="/terms">
               <span className="text-[#0645ad] hover:underline">Terms & Conditions</span>
             </Link>
-            <Link href="/content/privacy-policy">
+            <Link href="/privacy-policy">
               <span className="text-[#0645ad] hover:underline">Privacy Policy</span>
             </Link>
-            <Link href="/content/code-of-conduct">
+            <Link href="/code-of-conduct">
               <span className="text-[#0645ad] hover:underline">Code of Conduct</span>
             </Link>
           </div>
