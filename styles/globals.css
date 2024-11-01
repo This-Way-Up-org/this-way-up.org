@@ -25,6 +25,7 @@
   margin-bottom: 0.6em;
   padding-bottom: 0.25em;
   scroll-margin-top: 100px;
+  scroll-behavior: smooth;
 }
 
 .prose h3 {
@@ -72,6 +73,8 @@
   border-radius: 0.25rem;
   padding: 1rem;
   width: 20rem;
+  position: relative;
+  z-index: 1;
 }
 
 .content-box img {
@@ -142,4 +145,9 @@
   color: #54595d;
   font-size: 0.875rem;
   margin-top: 0.5rem;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }

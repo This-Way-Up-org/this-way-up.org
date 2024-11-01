@@ -4,9 +4,9 @@ category: Guide
 ---
 
 <div class="article-header">
-  <h1 id="top">Example Article</h1>
+  <h1>Example Article</h1>
   <div class="article-metadata">
-    Click edit in the top right see all formatting tips and how to use images, hyperlinks, the content box, etc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus fermentum auctor ultricies. Suspendisse porttitor finibus ipsum, mattis interdum nulla dapibus sodales. In non orci eu erat pellentesque lacinia. Vivamus accumsan egestas auctor. Aliquam at varius massa. Cras ipsum velit, egestas sed ante in, euismod rhoncus diam. Nulla eu sollicitudin dolor, sit amet feugiat elit.
+    Click edit in the top right see all formatting tips and how to use images, hyperlinks, the content box, etc.
   </div>
 </div>
 
@@ -24,11 +24,11 @@ category: Guide
   </div>
 </div>
 
-## Introduction
+<h2 id="introduction">Introduction</h2>
 
 This is an example article demonstrating the various formatting and layout options available in our documentation system. The article showcases text formatting, lists, code blocks, and media embedding capabilities.
 
-## Text Formatting
+<h2 id="text-formatting">Text Formatting</h2>
 
 You can format text in multiple ways:
 
@@ -37,7 +37,7 @@ You can format text in multiple ways:
 - Create `inline code` using backticks
 - Add ~~strikethrough~~ using double tildes
 
-## Lists
+<h2 id="lists">Lists</h2>
 
 ### Unordered Lists
 
@@ -55,7 +55,7 @@ You can format text in multiple ways:
    2. Substep B
 3. Third step
 
-## Code Examples
+<h2 id="code">Code Examples</h2>
 
 Here's an example of a JavaScript code block:
 
@@ -69,7 +69,7 @@ function greet(name) {
 greet('World');
 ```
 
-## Links and Images
+<h2 id="links-and-images">Links and Images</h2>
 
 You can create links to other articles like [Getting Started](/getting-started) or external sites.
 
