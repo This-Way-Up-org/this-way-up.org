@@ -2,6 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import { marked } from 'marked'
+import { GITHUB_REPO } from './config'
 
 const contentDirectory = path.join(process.cwd(), 'content')
 
@@ -18,6 +19,14 @@ export interface PageContent {
   title: string
   category: string
   lastModified: string
+}
+
+function processTemplateVariables(content: string): string {
+  return content
+    .replace(/\${GITHUB_REPO\.name}/g, GITHUB_REPO.name)
+    .replace(/\${GITHUB_REPO\.owner}/g, GITHUB_REPO.owner)
+    .replace(/\${GITHUB_REPO\.branch}/g, GITHUB_REPO.branch)
+    .replace(/\${GITHUB_REPO\.contentPath}/g, GITHUB_REPO.contentPath)
 }
 
 export async function getAllPages(): Promise<WikiPage[]> {
@@ -98,8 +107,11 @@ export async function getPageContent(filename: string): Promise<PageContent> {
   const { data, content } = matter(fileContents)
   const pages = await getAllPages()
   
+  // Process template variables before converting to HTML
+  const processedContent = processTemplateVariables(content)
+  
   const result: PageContent = {
-    content: marked(content),
+    content: marked(processedContent),
     pages,
     title: data.title || filename,
     category: data.category || 'Uncategorized',
