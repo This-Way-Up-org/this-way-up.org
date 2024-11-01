@@ -1,4 +1,4 @@
-import { GetStaticPaths, GetStaticProps } from 'next'
+// pages/[...slug].tsx
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { getPageContent, getAllPages } from '../lib/wiki'
 import type { PageContent } from '../lib/wiki'
