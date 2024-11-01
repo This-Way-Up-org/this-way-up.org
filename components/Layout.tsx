@@ -29,21 +29,21 @@ export default function Layout({ children, pages, githubUrl, currentPath }: Layo
               gitWiki
             </Link>
             <span className="text-[#54595d] text-lg">
-              Stop paying to host your wiki
+              The most affordable way to host a wiki
             </span>
           </div>
         </div>
       </header>
-      <div className="flex-1 flex justify-center w-full bg-white">
+      <div className="flex-1 flex justify-center w-full bg-[#f6f6f6]">
         <div className="max-w-7xl w-full flex mx-auto px-4">
           <Sidebar pages={pages} />
-          <div className="flex-1 min-w-0 border-l border-[#a7d7f9] flex flex-col">
-            <TopNav githubUrl={githubUrl} currentPath={currentPath} />
-            <main className="p-6 flex-1">
-              <div className="max-w-4xl mx-auto">
+          <div className="flex-1 min-w-0 bg-white flex flex-col">
+            <div className="max-w-4xl mx-auto w-full">
+              <TopNav githubUrl={githubUrl} currentPath={currentPath} />
+              <main className="p-6 flex-1">
                 {children}
-              </div>
-            </main>
+              </main>
+            </div>
           </div>
         </div>
       </div>
