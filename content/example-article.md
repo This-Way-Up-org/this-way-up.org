@@ -24,11 +24,11 @@ category: Guide
   </div>
 </div>
 
-<h2 id="introduction">Introduction</h2>
+## Introduction
 
 This is an example article demonstrating the various formatting and layout options available in our documentation system. The article showcases text formatting, lists, code blocks, and media embedding capabilities.
 
-<h2 id="text-formatting">Text Formatting</h2>
+## Text Formatting
 
 You can format text in multiple ways:
 
@@ -37,7 +37,7 @@ You can format text in multiple ways:
 - Create `inline code` using backticks
 - Add ~~strikethrough~~ using double tildes
 
-<h2 id="lists">Lists</h2>
+## Lists
 
 ### Unordered Lists
 
@@ -55,7 +55,7 @@ You can format text in multiple ways:
    2. Substep B
 3. Third step
 
-<h2 id="code">Code Examples</h2>
+## Code Examples
 
 Here's an example of a JavaScript code block:
 
@@ -69,7 +69,7 @@ function greet(name) {
 greet('World');
 ```
 
-<h2 id="links-and-images">Links and Images</h2>
+## Links and Images
 
 You can create links to other articles like [Getting Started](/getting-started) or external sites.
 
