@@ -38,82 +38,84 @@ export default function Sidebar({ pages }: SidebarProps) {
   const categoryOrder = ['Main', 'Navigation', 'Guide'];
 
   return (
-    <div className="w-[176px] bg-[#f6f6f6] p-4 shrink-0">
-      <div className="mb-8">
-        <div className="relative">
-          <input
-            type="text"
-            placeholder="Search wiki..."
-            value={searchQuery}
-            onChange={(e) => {
-              setSearchQuery(e.target.value);
-              setIsSearching(!!e.target.value);
-            }}
-            className="w-full p-2 pl-8 pr-8 border border-[#a7d7f9] rounded bg-white text-sm"
-            aria-label="Search wiki pages"
-          />
-          <Search className="absolute left-2 top-2.5 h-4 w-4 text-gray-400" aria-hidden="true" />
-          {searchQuery && (
-            <button
-              onClick={() => {
-                setSearchQuery('');
-                setIsSearching(false);
+    <div className="w-[176px] bg-[#f6f6f6] shrink-0">
+      <div className="p-4">
+        <div className="mb-8">
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="Search wiki..."
+              value={searchQuery}
+              onChange={(e) => {
+                setSearchQuery(e.target.value);
+                setIsSearching(!!e.target.value);
               }}
-              className="absolute right-2 top-2.5"
-              aria-label="Clear search"
-            >
-              <X className="h-4 w-4 text-gray-400 hover:text-gray-600" aria-hidden="true" />
-            </button>
+              className="w-full p-2 pl-8 pr-8 border border-[#a7d7f9] rounded bg-white text-sm"
+              aria-label="Search wiki pages"
+            />
+            <Search className="absolute left-2 top-2.5 h-4 w-4 text-gray-400" aria-hidden="true" />
+            {searchQuery && (
+              <button
+                onClick={() => {
+                  setSearchQuery('');
+                  setIsSearching(false);
+                }}
+                className="absolute right-2 top-2.5"
+                aria-label="Clear search"
+              >
+                <X className="h-4 w-4 text-gray-400 hover:text-gray-600" aria-hidden="true" />
+              </button>
+            )}
+          </div>
+
+          {isSearching && (
+            <div className="mt-2 bg-white border border-[#a7d7f9] rounded">
+              {filteredPages.length > 0 ? (
+                <div className="max-h-64 overflow-y-auto">
+                  {filteredPages.map((page, index) => (
+                    <Link
+                      key={index}
+                      href={`/${page.slug}`}
+                      className="block p-2 hover:bg-[#e6f3ff] border-b border-[#a7d7f9] last:border-b-0 text-sm"
+                    >
+                      <div className="text-[#0645ad] hover:underline">
+                        {page.title}
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              ) : (
+                <div className="p-2 text-sm text-gray-500">
+                  No results found
+                </div>
+              )}
+            </div>
           )}
         </div>
 
-        {isSearching && (
-          <div className="mt-2 bg-white border border-[#a7d7f9] rounded">
-            {filteredPages.length > 0 ? (
-              <div className="max-h-64 overflow-y-auto">
-                {filteredPages.map((page, index) => (
-                  <Link
-                    key={index}
-                    href={`/${page.slug}`}
-                    className="block p-2 hover:bg-[#e6f3ff] border-b border-[#a7d7f9] last:border-b-0 text-sm"
-                  >
-                    <div className="text-[#0645ad] hover:underline">
-                      {page.title}
-                    </div>
-                  </Link>
-                ))}
+        <nav className="text-sm">
+          {categoryOrder.map(category => {
+            if (!categoryGroups[category]) return null;
+            return (
+              <div key={category} className="mb-4">
+                <h3 className="font-bold text-[#54595d] mb-1">{category}</h3>
+                <ul className="space-y-1">
+                  {categoryGroups[category].map((page, index) => (
+                    <li key={index}>
+                      <Link
+                        href={`/${page.slug}`}
+                        className="text-[#0645ad] hover:underline"
+                      >
+                        {page.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
-            ) : (
-              <div className="p-2 text-sm text-gray-500">
-                No results found
-              </div>
-            )}
-          </div>
-        )}
+            );
+          })}
+        </nav>
       </div>
-
-      <nav className="text-sm">
-        {categoryOrder.map(category => {
-          if (!categoryGroups[category]) return null;
-          return (
-            <div key={category} className="mb-4">
-              <h3 className="font-bold text-[#54595d] mb-1">{category}</h3>
-              <ul className="space-y-1">
-                {categoryGroups[category].map((page, index) => (
-                  <li key={index}>
-                    <Link
-                      href={`/${page.slug}`}
-                      className="text-[#0645ad] hover:underline"
-                    >
-                      {page.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          );
-        })}
-      </nav>
     </div>
   );
 }

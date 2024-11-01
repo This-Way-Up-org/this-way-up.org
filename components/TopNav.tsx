@@ -10,8 +10,8 @@ export default function TopNav({ githubUrl, currentPath }: TopNavProps) {
   const historyUrl = currentPath ? getGithubBlameUrl(currentPath) : undefined
 
   return (
-    <div className="border-b border-[#a7d7f9] bg-white w-full">
-      <div className="flex justify-between">
+    <div className="border-b border-[#a7d7f9] bg-[#ffffff]">
+      <div className="flex">
         <div className="flex">
           {TALK_URL && (
             <Link 
@@ -24,7 +24,7 @@ export default function TopNav({ githubUrl, currentPath }: TopNavProps) {
             </Link>
           )}
         </div>
-        <div className="flex">
+        <div className="flex ml-auto">
           {githubUrl && (
             <Link
               href={githubUrl}
