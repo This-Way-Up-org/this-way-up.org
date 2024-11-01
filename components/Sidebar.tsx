@@ -1,43 +1,41 @@
-import { useState, useEffect } from 'react'
-import Link from 'next/link'
-import { Search, X } from 'lucide-react'
-import { WikiPage } from '../lib/wiki'
+import { useState } from 'react';
+import Link from 'next/link';
+import { Search, X } from 'lucide-react';
+import { WikiPage } from '../lib/wiki';
 
 interface SidebarProps {
-  pages: WikiPage[]
+  pages: WikiPage[];
 }
 
 interface CategoryGroup {
-  [key: string]: WikiPage[]
+  [key: string]: WikiPage[];
 }
 
 export default function Sidebar({ pages }: SidebarProps) {
-  const [searchQuery, setSearchQuery] = useState('')
-  const [isSearching, setIsSearching] = useState(false)
+  const [searchQuery, setSearchQuery] = useState('');
+  const [isSearching, setIsSearching] = useState(false);
 
   // Group pages by category
   const categoryGroups = pages.reduce((groups: CategoryGroup, page) => {
-    const category = page.category || 'Uncategorized'
+    const category = page.category || 'Uncategorized';
     if (!groups[category]) {
-      groups[category] = []
+      groups[category] = [];
     }
-    groups[category].push(page)
-    return groups
-  }, {})
+    groups[category].push(page);
+    return groups;
+  }, {});
 
   // Sort pages within each category
   Object.keys(categoryGroups).forEach(category => {
-    categoryGroups[category].sort((a, b) => a.title.localeCompare(b.title))
-  })
+    categoryGroups[category].sort((a, b) => a.title.localeCompare(b.title));
+  });
 
   const filteredPages = searchQuery
-    ? pages.filter(page => 
-        page.title.toLowerCase().includes(searchQuery.toLowerCase())
-      )
-    : []
+    ? pages.filter(page => page.title.toLowerCase().includes(searchQuery.toLowerCase()))
+    : [];
 
   // Define category order
-  const categoryOrder = ['Main', 'Navigation', 'Guide']
+  const categoryOrder = ['Main', 'Navigation', 'Guide'];
 
   return (
     <div className="w-[176px] bg-[#f6f6f6] p-4 shrink-0">
@@ -48,21 +46,23 @@ export default function Sidebar({ pages }: SidebarProps) {
             placeholder="Search wiki..."
             value={searchQuery}
             onChange={(e) => {
-              setSearchQuery(e.target.value)
-              setIsSearching(!!e.target.value)
+              setSearchQuery(e.target.value);
+              setIsSearching(!!e.target.value);
             }}
             className="w-full p-2 pl-8 pr-8 border border-[#a7d7f9] rounded bg-white text-sm"
+            aria-label="Search wiki pages"
           />
-          <Search className="absolute left-2 top-2.5 h-4 w-4 text-gray-400" />
+          <Search className="absolute left-2 top-2.5 h-4 w-4 text-gray-400" aria-hidden="true" />
           {searchQuery && (
-            <button 
+            <button
               onClick={() => {
-                setSearchQuery('')
-                setIsSearching(false)
+                setSearchQuery('');
+                setIsSearching(false);
               }}
               className="absolute right-2 top-2.5"
+              aria-label="Clear search"
             >
-              <X className="h-4 w-4 text-gray-400 hover:text-gray-600" />
+              <X className="h-4 w-4 text-gray-400 hover:text-gray-600" aria-hidden="true" />
             </button>
           )}
         </div>
@@ -101,7 +101,7 @@ export default function Sidebar({ pages }: SidebarProps) {
               <ul className="space-y-1">
                 {categoryGroups[category].map((page, index) => (
                   <li key={index}>
-                    <Link 
+                    <Link
                       href={`/${page.slug}`}
                       className="text-[#0645ad] hover:underline"
                     >
@@ -115,5 +115,5 @@ export default function Sidebar({ pages }: SidebarProps) {
         })}
       </nav>
     </div>
-  )
+  );
 }
