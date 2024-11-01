@@ -5,6 +5,7 @@
 /* Base styles */
 .prose {
   max-width: none;
+  position: relative;
 }
 
 .prose h1 {
@@ -24,12 +25,10 @@
   margin-bottom: 0.6em;
   padding-bottom: 0.25em;
   scroll-margin-top: 100px;
-  clear: both;
 }
 
 .prose h3 {
   scroll-margin-top: 100px;
-  clear: both;
 }
 
 .prose p {
@@ -67,15 +66,12 @@
 /* Content box */
 .content-box {
   float: right;
-  clear: right;
   margin: 0 0 1rem 2rem;
   background: #f8f9fa;
   border: 1px solid #a2a9b1;
   border-radius: 0.25rem;
   padding: 1rem;
   width: 20rem;
-  position: relative;
-  z-index: 1;
 }
 
 .content-box img {
@@ -121,7 +117,6 @@
   margin: 1rem 0;
   overflow-x: auto;
   color: #1f2328;
-  clear: both;
 }
 
 .prose code {
@@ -141,7 +136,6 @@
 /* Article header */
 .article-header {
   margin-bottom: 1.5rem;
-  clear: both;
 }
 
 .article-metadata {
