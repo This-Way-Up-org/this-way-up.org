@@ -15,11 +15,11 @@ interface LayoutProps {
 export default function Layout({ children, pages, githubUrl, currentPath }: LayoutProps) {
   return (
     <div className="min-h-screen bg-[#f6f6f6] flex flex-col">
-      <header className="h-[144px] bg-[#ffffff] border-b border-[#a7d7f9]">
+      <header className="h-[144px] bg-[#ffffff] border-b border-[#a7d7f9] w-full">
         <div className="max-w-7xl mx-auto px-4 h-full flex items-center">
           <img 
-            src="/logo.png"
-            alt="Wiki Logo"
+            src="/logo.png" 
+            alt="Wiki Logo" 
             className="w-[144px] h-[144px] object-contain"
             width={450}
             height={450}
@@ -34,13 +34,17 @@ export default function Layout({ children, pages, githubUrl, currentPath }: Layo
           </div>
         </div>
       </header>
-      <div className="max-w-7xl mx-auto bg-white flex flex-1">
-        <Sidebar pages={pages} />
-        <div className="flex-1 border-l border-[#a7d7f9] flex flex-col">
-          <TopNav githubUrl={githubUrl} currentPath={currentPath} />
-          <main className="p-6 flex-1">
-            {children}
-          </main>
+      <div className="flex-1 flex justify-center w-full bg-white">
+        <div className="max-w-7xl w-full flex">
+          <Sidebar pages={pages} />
+          <div className="flex-1 min-w-0 border-l border-[#a7d7f9] flex flex-col">
+            <TopNav githubUrl={githubUrl} currentPath={currentPath} />
+            <main className="p-6 flex-1">
+              <div className="max-w-none w-full">
+                {children}
+              </div>
+            </main>
+          </div>
         </div>
       </div>
       <Footer />
