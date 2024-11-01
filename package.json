@@ -11,9 +11,9 @@
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.268.0",
     "marked": "^7.0.4",
-    "next": "^13.5.7",
-    "react": "^18.3.1",
-    "react-dom": "^18.2.0"
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9",

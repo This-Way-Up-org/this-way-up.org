@@ -1,5 +1,4 @@
-import Link from 'next/link'
-import { GITHUB_REPO } from '../lib/config'
+import Link from 'next/link';
 
 export default function Footer() {
   return (
@@ -19,18 +18,18 @@ export default function Footer() {
             additional terms may apply.
           </p>
           <div className="mt-2 flex gap-4">
-            <Link href="/terms" className="text-[#0645ad] hover:underline">
-              Terms & Conditions
+            <Link href="/content/terms">
+              <a className="text-[#0645ad] hover:underline"> Terms & Conditions </a>
             </Link>
-            <Link href="/privacy-policy" className="text-[#0645ad] hover:underline">
-              Privacy Policy
+            <Link href="/content/privacy-policy">
+              <a className="text-[#0645ad] hover:underline"> Privacy Policy </a>
             </Link>
-            <Link href="/code-of-conduct" className="text-[#0645ad] hover:underline">
-              Code of Conduct
+            <Link href="/content/code-of-conduct">
+              <a className="text-[#0645ad] hover:underline"> Code of Conduct </a>
             </Link>
           </div>
         </div>
       </div>
     </footer>
-  )
+  );
 }
