@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#f6f6f6] border-t border-[#a7d7f9]">
+    <footer className="bg-[#f6f6f6] border-t border-[#a7d7f9] mt-auto">
       <div className="max-w-7xl mx-auto px-4 py-6">
         <div className="text-sm text-[#54595d]">
           <p>
@@ -19,13 +19,13 @@ export default function Footer() {
           </p>
           <div className="mt-2 flex gap-4">
             <Link href="/content/terms">
-              <a className="text-[#0645ad] hover:underline"> Terms & Conditions </a>
+              <span className="text-[#0645ad] hover:underline">Terms & Conditions</span>
             </Link>
             <Link href="/content/privacy-policy">
-              <a className="text-[#0645ad] hover:underline"> Privacy Policy </a>
+              <span className="text-[#0645ad] hover:underline">Privacy Policy</span>
             </Link>
             <Link href="/content/code-of-conduct">
-              <a className="text-[#0645ad] hover:underline"> Code of Conduct </a>
+              <span className="text-[#0645ad] hover:underline">Code of Conduct</span>
             </Link>
           </div>
         </div>
