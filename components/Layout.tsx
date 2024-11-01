@@ -35,12 +35,12 @@ export default function Layout({ children, pages, githubUrl, currentPath }: Layo
         </div>
       </header>
       <div className="flex-1 flex justify-center w-full bg-white">
-        <div className="max-w-7xl w-full flex">
+        <div className="max-w-7xl w-full flex mx-auto px-4">
           <Sidebar pages={pages} />
           <div className="flex-1 min-w-0 border-l border-[#a7d7f9] flex flex-col">
             <TopNav githubUrl={githubUrl} currentPath={currentPath} />
             <main className="p-6 flex-1">
-              <div className="max-w-none w-full">
+              <div className="max-w-4xl mx-auto">
                 {children}
               </div>
             </main>
