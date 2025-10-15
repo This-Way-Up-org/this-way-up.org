@@ -20,12 +20,12 @@ content/           # All wiki content goes here
 
 1. Open a new file in your preferred text editor (Notepad, Visutal Studio, google docs, etc.)
 2. Add title and category blocks to the top of your article:
-   ```
-   ---
-   title: Your Article Title
-   Category: Your Article Category
-   ---
-   ```
+```
+---
+title: Your Article Title
+Category: Your Article Category
+---
+```
 3. Using `example-article.md`  and the cheatsheet below as a reference, write your article using Markdown for formatting.
       ~ If you don't understand Markdown, you can write your article in any document writing tool (Libre Office, Google Docs, etc.), and then use a conversion to tool to turn the doc file into markdown. In the end, however, all articles MUST BE WRITTEN IN MARKDOWN.
 4. Navigate to the `content/` folder in [the website's github repository](https://github.com/This-Way-Up-org/this-way-up.org/)
