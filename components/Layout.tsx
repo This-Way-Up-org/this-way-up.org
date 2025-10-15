@@ -26,10 +26,10 @@ export default function Layout({ children, pages, githubUrl, currentPath }: Layo
           />
           <div className="flex items-center gap-6">
             <Link href="/" className="text-2xl font-bold text-[#0070f3]">
-              gitWiki
+              This Way Up
             </Link>
             <span className="text-[#54595d] text-lg">
-              Stop paying to host your wiki
+               
             </span>
           </div>
         </div>
