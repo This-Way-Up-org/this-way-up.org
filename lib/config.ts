@@ -1,6 +1,6 @@
 export const GITHUB_REPO = {
-  owner: 'This Way Up Org',  // replace this with your Github Username
-  name: 'This Way Up', // replace this with your repo's name
+  owner: 'This-Way-Up-org',  // replace this with your Github Username
+  name: 'this-way-up.org', // replace this with your repo's name
   branch: 'main',
   contentPath: 'content'
 }
