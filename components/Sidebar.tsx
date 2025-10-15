@@ -34,8 +34,8 @@ export default function Sidebar({ pages }: SidebarProps) {
     ? pages.filter(page => page.title.toLowerCase().includes(searchQuery.toLowerCase()))
     : [];
 
-  // Define category order
-  const categoryOrder = ['Main', 'Navigation', 'Guide'];
+  // Get all unique categories and sort them alphabetically
+  const categoryOrder = Object.keys(categoryGroups).sort((a, b) => a.localeCompare(b));
 
   return (
     <div className="w-[176px] bg-[#f6f6f6] shrink-0">

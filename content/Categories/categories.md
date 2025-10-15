@@ -29,12 +29,18 @@ Pages that help you find content across the wiki.
 - [Contents](/contents)
 - [Tutorials](/tutorials)
 
+## Resource - Food
+
+Resources related to food assistance and services.
+
+- [Little Free Food Pantries](/little-free-food-pantries)
+
 ---
 
 ## Statistics
 
-- Total categories: 3
-- Total pages: 7
+- Total categories: 4
+- Total pages: 8
 
 ## Adding Categories
 
@@ -45,4 +51,3 @@ New categories can be added by including them in the front matter of any page:
 title: Page Title
 category: New Category
 ---
-```
