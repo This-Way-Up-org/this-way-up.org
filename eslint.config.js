@@ -42,7 +42,7 @@ module.exports = [
     },
     rules: {
       // TypeScript rules
-      "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+      "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_", "varsIgnorePattern": "^handleSearch$" }],
       "@typescript-eslint/no-explicit-any": "warn",
 
       // React rules

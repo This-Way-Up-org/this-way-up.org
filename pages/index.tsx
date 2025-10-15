@@ -1,6 +1,6 @@
 import { GetStaticProps } from 'next'
 import Layout from '../components/Layout'
-import { getAllPages } from '../lib/wiki'
+import { getAllPages, WikiPage } from '../lib/wiki'
 import { getGithubEditUrl } from '../lib/config'
 import fs from 'fs'
 import path from 'path'
@@ -9,7 +9,7 @@ import { marked } from 'marked'
 
 interface HomeProps {
   content: string
-  pages: any[]
+  pages: WikiPage[]
   githubUrl: string
 }
 
