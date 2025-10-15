@@ -20,4 +20,4 @@ Welcome to our tutorials section! Here you'll find all our guides to help you ge
 
 ## Contributing
 
-Want to add a new tutorial? Check out our [How to Edit](/how-to-edit.md) guide to learn how to contribute your own guides to our documentation.
+Want to add a new tutorial? Check out our [How to Edit](/how-to-edit) guide to learn how to contribute your own guides to our documentation.
