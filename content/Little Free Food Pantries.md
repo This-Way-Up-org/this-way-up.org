@@ -9,7 +9,7 @@ category: Resource - Food
 </div>
 
 <div class="content-box">
-  <img src="/images/freelittlepantry_example.jpeg" alt="Little Free Pantry" width="100" height="300">
+  <img src="/images/freelittlepantry_example.jpeg" alt="Little Free Pantry" width="300" height="400">
   <div class="content-nav">
     <h3>Contents</h3>
     <ul>
