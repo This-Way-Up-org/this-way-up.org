@@ -34,8 +34,29 @@ export default function Sidebar({ pages }: SidebarProps) {
     ? pages.filter(page => page.title.toLowerCase().includes(searchQuery.toLowerCase()))
     : [];
 
-  // Get all unique categories and sort them alphabetically
-  const categoryOrder = Object.keys(categoryGroups).sort((a, b) => a.localeCompare(b));
+  // Get all unique categories and sort them with Guide and Legal at the bottom
+  const categoryOrder = Object.keys(categoryGroups).sort((a, b) => {
+    // Define categories that should always be at the bottom
+    const bottomCategories = ['Guide', 'Legal'];
+
+    // If both categories are in the bottom list, sort them alphabetically
+    if (bottomCategories.includes(a) && bottomCategories.includes(b)) {
+      return a.localeCompare(b);
+    }
+
+    // If a is a bottom category, it should come after b
+    if (bottomCategories.includes(a)) {
+      return 1;
+    }
+
+    // If b is a bottom category, it should come before a
+    if (bottomCategories.includes(b)) {
+      return -1;
+    }
+
+    // For all other categories, sort alphabetically
+    return a.localeCompare(b);
+  });
 
   return (
     <div className="w-[176px] bg-[#f6f6f6] shrink-0">
