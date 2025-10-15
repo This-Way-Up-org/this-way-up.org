@@ -24,13 +24,13 @@ category: Resource - Food
 
 <h2 id="introduction">Introduction</h2>
 
-Little Free Food Pantries are an extension of the more common Little Free Libraries, with the purpose of being a point where people may deposit or withdraw food items as needed. Unlike litlle libraries, these pantries are often inside of businesses and religious buildings and thus are only avaible when those buidlings are open to the public. They do not require any ID verification or goverment benefits to take food from, and exist across the entire United States. 
+Little Free Food Pantries are an extension of the more common Little Free Libraries, with the purpose of being a point where people may deposit or withdraw food items as needed. Unlike little libraries, these pantries are often inside of businesses and religious buildings and thus are only available when those buildings are open to the public. They do not require any ID verification or government benefits to take food from, and exist across the entire United States.
 
 <h2 id="where-to-find">Where To Find</h2>
 
-A community-made (searchable map)[https://mapping.littlefreepantry.org/] of little free pantries exists at LittleFreePantry.org. Entries include a street address and instructions on how to get to the food pantry upon entering the building. It is unclear, however, how well the map is maintained and if the closure of pantries is tracked at all.
+A community-made [searchable map](https://mapping.littlefreepantry.org/) of little free pantries exists at LittleFreePantry.org. Entries include a street address and instructions on how to get to the food pantry upon entering the building. It is unclear, however, how well the map is maintained and if the closure of pantries is tracked at all.
 
-It is worth asking public sevice workers in the local area of any such food pantries, as people living in the area will most likely know of pantries that are maintained and know what the open hours are of the public building the pantry is inside of. 
+It is worth asking public service workers in the local area of any such food pantries, as people living in the area will most likely know of pantries that are maintained and know what the open hours are of the public building the pantry is inside of.
 
 <h2 id="how-to-use">How To Use</h2>
 
@@ -38,7 +38,7 @@ As stated above, these free food pantries are typically inside of public busines
 
 <h2 id="best-practices">Best Practices</h2>
 
-Politness and being prepared are the best ways to make sure staff do not feel the need to to kick you out before you even get to the pantry. Saying please and thank you, as well as clealry stating why your're there helps people feel safe and willing to help you.
+Politeness and being prepared are the best ways to make sure staff do not feel the need to to kick you out before you even get to the pantry. Saying please and thank you, as well as clearly stating why you're there helps people feel safe and willing to help you.
 
 You can't assume free pantries will have any desirable food, be free of expired/old food, or have bags/boxes for you to carry the food with.
 
@@ -48,11 +48,11 @@ You can't assume free pantries will have any desirable food, be free of expired/
   - Plastic shopping bags will work as long as you don't fill them to the point of stretching the plastic.
 - A bottle to fill at any nearby public drinking fountain or by the staff of the business
   - If they know why you're there and you ask calmly, most people will be fine to fill up a bottle of water for you.
-- A can opener or similar tool, as donators tend to drop off foods with long shelf-life (aka canned food)
+- A can opener or similar tool, as donors tend to drop off foods with long shelf-life (aka canned food)
 
 <h2 id="links-and-images">Links and Images</h2>
 
-![Example Little Food Pantry](/images/freelittlepantry_example.jpeg)
+![Example Little Free Food Pantry](/images/freelittlepantry_example.jpeg)
 *Figure 1: An example food pantry, sourced from littlefreepantry.org*
 
 ### References
