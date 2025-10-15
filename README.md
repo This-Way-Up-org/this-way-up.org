@@ -15,13 +15,14 @@ The purpose of this site is to aggregate real free resources, and methods for ho
 
 ## Philosophy
 
-This is meant to be a non-religious, non-profit, non-political, decentralized, and fully open movement. The goal is to eliminate all knowledge-based barriers which currently prevent homeless/impoverished people from actually being recognized as a human being by the system of our society and lifted out of their situation. To a contributor, this site will be a place of discussion and theorizing new methods for independent people navigating the system of our society to get all the bare minimum needs for their life met (and therfore create methods others may use). To a visitor, this wiki should be a place which provides maps, guides, and tips which altogether create a real roadmap they can use to get out of poverty. In the end, the information here should be detailed and informative enough that a person can act on their own to get out of poverty, or a seperate individual can eliminate poverty by introducing the impoverished person to the resources described here.    
+This is meant to be a non-religious, non-profit, non-political, decentralized, and fully open movement. The goal is to eliminate all knowledge-based barriers which currently prevent homeless/impoverished people from actually being recognized as a human being by the system of our society and lifted out of their situation. To a contributor, this site will be a place of discussion and theorizing new methods for independent people navigating the system of our society to get all the bare minimum needs for their life met (and therfore create methods others may use). To a visitor, this wiki should be a place which provides maps, guides, and tips which altogether create a real roadmap they can use to get out of poverty. In the end, the information here should be detailed and informative enough that a person can act on their own to get out of poverty, or a seperate individual can eliminate an individual's poverty by introducing the impoverished person to the resources described here. 
+
 ## Core Tenants
 
-1. The collection of knowledge here is fully open source, meaning no homo-sapien (living or dead) should be prevented from accessing, using, editing, or adding to it. None of the original information on this site should be considered copyrighted, and falls under the Creative Commons Attribution-ShareAlike (CC BY-SA) 4.0 or newer. Any copyrighted work should be linked to instead of posted directly onto the site.
+1. The collection of knowledge here is fully open source, meaning no homo-sapien (living or dead) should be prevented from accessing, using, editing, or adding to it. None of the original information on this site should be considered copyrighted, and falls under the Creative Commons Attribution-ShareAlike (CC BY-SA) 4.0 License or newer. Any copyrighted work should be linked to instead of posted directly onto the site.
 2. The infomation here should be unbiased in tone, verifiable, neutral, and encyclopedic; with manual-like instructions on how to use each resource it describes.
 3. Contributors cannot push personal opinions; instead, they summarize what reliable sources say. If a resource is no longer useful, it should be removed and disregarded instead of disparaged.
-4. Efforts will also be made to ensure accessibiility to the site's information, even when without internet access. Printed reading materials and other offline versions can and will be made as necessary to allow full access to the website regardless of what is perceived to be the "proper" way to gain access.
+4. Efforts will also be made to ensure accessibility to the site's information, even when without internet access. Printed reading materials and other offline versions can and will be made as necessary to allow full access to the website regardless of what is perceived to be the "proper" way to gain access.
 5. Despite the end goal of decentralizing social work, the main version of this website will be centralized to Github. All contributors who wish to edit/add to the website, or discuss potential edits/additions, will need to do so through the already existing mechanisms of [the website's github repository](https://github.com/This-Way-Up-org/this-way-up.org/)
 
 ## Goals
@@ -39,6 +40,6 @@ This is meant to be a non-religious, non-profit, non-political, decentralized, a
 
 Want to become a contributor? Check out our [How to Edit](/how-to-edit) guide to get started.
 
-## Acknowledgements_
+## Acknowledgements
 
 The logo for this website is globally recognized as the ISO 7000 - Ref-No 0623 , a “Pictorial marking for handling of goods”, and is in no way counted as exclusive to us. Because it’s a standardized symbol for public use, under the CC0 1.0 Universal Public Domain Dedication, it cannot be copyrighted, patented, or trademarked in any meaningful way. We do not claim to do any of these things and fully release any legal right to claim as such. 
