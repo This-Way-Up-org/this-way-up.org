@@ -146,6 +146,56 @@ The approach unfolds in sequential stages:
 - **Processing Time**: 3-10 business days
 - **Verification Use**: Bank signature cards and account documents can establish identity for verification purposes
 
+### Document Recovery Sequence
+
+#### Important: SSA Two-Tier Verification System
+
+The Social Security Administration operates under two different sets of requirements that may appear contradictory:
+
+**Public-Facing Standard Requirements**:
+- Original documents or agency-certified copies required
+- Current (not expired) documents only
+- No photocopies or notarized copies accepted
+
+**Internal Alternative Verification Policies (POMS)**:
+- Used when standard documents are "genuinely unavailable"
+- Allows secondary and third-level identity documents
+- Includes "logical verification" through personal history questions
+- Specifically available for homeless individuals and special circumstances
+
+#### Key SSA Internal Policies
+
+**POMS RM 10210.420** - Priority List allows:
+- Medical records, school IDs, religious records as secondary evidence
+- Life insurance policies and employment records
+- Case-by-case evaluation when primary documents unavailable
+
+**POMS RM 10210.425** - Third-level documents:
+- Accepted when higher probative value documents not available
+- Includes witness statements and service provider attestations
+
+**Logical Verification Process**:
+- SSA verifies identity through personal history questions from their database
+- Available when documents unavailable, particularly for homeless individuals
+- Uses information like previous addresses, employment history, family members
+
+#### Strategic Approach for SSA Card Replacement
+
+1. **Attempt standard process first** with any available documents (even if limited)
+2. **Request alternative verification** when standard documents unavailable - explicitly state homelessness if applicable
+3. **Specifically mention homelessness** to trigger access to special procedures and flexibility
+4. **Use shelter verification letters** as accepted alternative documents under homeless services provisions
+
+#### Document Recovery Sequence
+
+The following sequence utilizes each document to obtain the next:
+
+1. **Social Security Card**: Obtained through "logical verification" process where Social Security Administration verifies identity through personal history questions, or using alternative documents under POMS guidelines
+2. **Birth Certificate**: Requested using Social Security number, often with homeless fee waiver programs
+3. **State ID**: Obtained using birth certificate and Social Security card
+4. **Bank Account**: Opened using state ID
+5. **Employment Access**: Applied for using bank account for direct deposits
+
 #### Important Notes
 
 **Document Authentication**
