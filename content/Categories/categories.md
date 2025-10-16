@@ -35,11 +35,22 @@ Resources related to food assistance and services.
 
 - [Little Free Food Pantries](/little-free-food-pantries)
 
+## Resource - Hospitality
+
+Resources related to hospitality and accommodation services.
+
+- [Trustroots](/trustroots)
+
+## Theory
+
+Theoretical discussions and concepts.
+
+- [Address First Method](/address-first)
 ---
 
 ## Statistics
 
-- Total categories: 4
+- Total categories: 6
 - Total pages: 8
 
 ## Adding Categories
