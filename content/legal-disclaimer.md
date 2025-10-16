@@ -90,6 +90,6 @@ Legal requirements and available resources change frequently. This disclaimer an
 
 ---
 
-*Last Updated: [Date]*
+*Last Updated: October 15, 2025*
 
 **Remember: When in doubt about legal matters, always consult with a qualified attorney or legal aid organization in your area. For medical concerns, always consult with a qualified healthcare provider.**
