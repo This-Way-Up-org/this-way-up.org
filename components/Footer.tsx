@@ -27,6 +27,9 @@ export default function Footer() {
             <Link href="/code-of-conduct">
               <span className="text-[#0645ad] hover:underline">Code of Conduct</span>
             </Link>
+            <Link href="/legal-disclaimer">
+              <span className="text-[#0645ad] hover:underline">Legal Disclaimer</span>
+            </Link>
           </div>
         </div>
       </div>

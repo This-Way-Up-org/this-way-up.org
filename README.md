@@ -43,3 +43,5 @@ Want to become a contributor? Check out our [How to Edit](/how-to-edit) guide to
 ## Acknowledgements
 
 The logo for this website is globally recognized as the ISO 7000 - Ref-No 0623 , a “Pictorial marking for handling of goods”, and is in no way counted as exclusive to us. Because it’s a standardized symbol for public use, under the CC0 1.0 Universal Public Domain Dedication, it cannot be copyrighted, patented, or trademarked in any meaningful way. We do not claim to do any of these things and fully release any legal right to claim as such. 
+
+**The information provided on this website is for educational and informational purposes only and does not constitute legal advice.** Nothing contained on this site should be construed as creating an attorney-client relationship or as providing legal counsel of any kind. Please see [Legal Disclaimer](/legal-disclaimer) for further information.
